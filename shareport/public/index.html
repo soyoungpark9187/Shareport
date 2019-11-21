@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <title id="titleCheck">SHAREPORT</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+</head>
+
+<body>
+
+  <!-- 네비게이션 바 시작 -->
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="/">SHAREPORT</a>
+      </div>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          <li class="active">
+            <a href="/">Home</a>
+          </li>
+          <li>
+            <a href="/mypage.html">마이페이지</a>
+          </li>
+          <li>
+            <a id="joinmenu" href="/join.html">가입</a>
+          </li>
+          <li>
+            <a id="loginmenu" href="/login.html">로그인</a>
+          </li>
+
+        </ul>
+      </div>
+      <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container-fluid -->
+  </nav>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+
+  <!-- 네비게이션 바 끝 -->
+
+
+
+  <!-- 점보트론 시작 -->
+  <div class="container">
+    <div class="jumbotron">
+      <h1>
+        <span style="color:white">레포트를 공유합니다.</span>
+      </h1>
+      <p>
+        <span style="color:white">레포트를 공유할수 있는 shareport </span>
+      </p>
+    </div>
+  </div>
+  <br>
+  <!-- 점보트론 끝 -->
+
+
+  <!-- 쓰기 텍스트 필드 시작-->
+  <div class="container">
+    <div class="form-group">
+      <label for="comment">텍스트 or 댓글 기능</label>
+      <textarea class="form-control" rows="5" id="comment" placeholder="내용을 입력하세요"></textarea>
+      <br>
+
+      <!-- 쓰기 버튼 가운데 정렬 -->
+      <div class="text-center">
+        <button type="button" class="btn btn-success write" id="write" name="write">쓰기</button>
+      </div>
+    </div>
+  </div>
+  <!-- 쓰기 텍스트 필드 끝-->
+
+
+
+  <!-- 리스트 출력하기-->
+  <div class="container">
+    <hr>
+    <h3>댓글리스트</h3>
+    <br>
+    <!-- 리스트 붙일 곳 -->
+    <div class="replyList"></div>
+  </div>
+  <script src="./js/time.js"></script>
+  <script src="./js/sessionCheck.js"></script>
+
+
+
+  <script src="https://www.gstatic.com/firebasejs/4.10.1/firebase.js"></script>
+  <script>
+    var firebaseEmailAuth; //파이어베이스 email 인증 모듈 전역변수
+    var firebaseDatabase; //파이어베이스 db 모듈 전역변수
+    var name; //유저 이름
+    var loginUserKey; //로그인한 유저의 부모 key
+    var userInfo; //로그인한 유저의 정보 object type
+    var comment;
+
+    //파이어 베이스 초기화 코드
+    var config = {
+      apiKey: "AIzaSyBealjJBHfcbRlptxLcAoxdhpSbFswQOZg",
+      authDomain: "shareport-e85b2.firebaseapp.com",
+      databaseURL: "https://shareport-e85b2.firebaseio.com",
+      projectId: "shareport-e85b2",
+      storageBucket: "shareport-e85b2.appspot.com",
+      messagingSenderId: "978150427508",
+      appId: "1:978150427508:web:115635132ce73e50223a21",
+      measurementId: "G-1SB8TYEZ99"
+    };
+    //파이어베이스 초기화
+    firebase.initializeApp(config);
+    //인증모듈 객체 가져오기
+    firebaseEmailAuth = firebase.auth();
+    //데이터베이스 모듈객체 가져오기
+    firebaseDatabase = firebase.database();
+
+    //세션 체크 함수
+    userSessionCheck();
+    $(document).ready(function() {
+
+      //메인화면 감사일기 쓰기버튼 눌렀을 때
+      $(document).on('click', '.write', function() {
+
+        //네비게이션 메뉴의 text값 가져오기 - 자바스크립트 dom 방식으로 가져왔다.
+        var seseionCheck = document.getElementById("loginmenu").textContent;
+
+        //내가 쓴글 가져오기 - jquery방식으로 가져왔다.
+        comment = $('#comment').val();
+        if (seseionCheck == "로그아웃") {
+          //저장하기
+          saveReplys();
+        } else {
+          alert("로그인이 필요한 서비스 입니다.")
+        }
+      });
+    });
+
+
+
+    //쓰기 버튼 눌렀을 때 호출 되는 함수
+    function saveReplys() {
+
+      //thanks 라는 테이블을 만들고 하위 데이터에 유저 아이디를 넣어준다. 그곳에 push로 가상의 키를 넣고, 객체를 넣어준다.!!!!
+      var replyRef = firebaseDatabase.ref("comments");
+
+      // 해당 객체의 key 값이 자동으로 생성된다.
+      var reply = replyRef.push(); // 해당 객체의 key 값이 자동으로 생성된다.
+
+      //로그인한 유저의 pk값,이름,내용,시간 데이터
+      var obj = {
+        userkey: loginUserKey,
+        name: name,
+        comment: comment,
+        createtime: currentTime
+      };
+      //위에서 thankRef.push()로 만들어진 key아래 위치에 저장해준다.
+      reply.set(obj);
+
+      alert("등록완료");
+
+      $('#comment').val("");
+    }
+
+
+
+    function replyList() {
+      alert("CommentList")
+      //로그인한 유저라면
+      if (loginUserKey) {
+        alert(loginUserKey)
+        //글이 저장된 레퍼런스 값 가져오기
+        var replyRef = firebaseDatabase.ref('comments');
+        //on 함수로 글 목록가져오기
+        replyRef.on('child_added', on_reply_list)
+      } else {
+        alert("실패")
+        return;
+      }
+    }
+
+    //땡스리스트 thanks 테이블의 thanks 키 들을 연속적으로 가져온다.
+    function on_reply_list(data) {
+      console.log("on_reply_list() 함수안으로 들어왔습니다 리스트를 가져오겠습니다")
+      var key = data.key;
+
+      var Data = data.val();
+      var comment = Data.comment;
+      var createtime = Data.createtime;
+      var name = Data.name;
+      var userkey = Data.userkey;
+
+      //alert(comment +"/"+ createtime + "/"+name +"/"+userkey);
+
+
+      //감사리스트 동적으로 붙이기
+      var html =
+        "<div class=\"media\" id='" + userkey + "' onclick=\"show_user_page(this.id)\">" +
+        "<div class=\"media-body\">" +
+        "<h4 class=\"media-heading\">" + name +
+        " <span STYLE=\"color: green; font-size: 5pt\">" + createtime + "</span></h4>" +
+        "<p>" + comment + "</p></div></div>" +
+        "<hr>";
+
+      $(".replyList").append(html);
+
+    }
+  </script>
+
+
+
+</body>
+
+</html>
