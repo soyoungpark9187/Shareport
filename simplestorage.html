@@ -199,7 +199,7 @@ function getValue() {
 function getReview() {
 	// get score
 	simpleStorage.getReview(contractAddress, function(e,r){
-	document.getElementById('text').innerHTML=r.toString();
+	document.getElementById('text').innerHTML=r;
 	});
 	  web3.eth.getBlockNumber(function(e,r){
 		    document.getElementById('lastBlock').innerHTML = r;
