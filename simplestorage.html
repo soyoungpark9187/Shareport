@@ -18,7 +18,7 @@
   <li>내 어카운트 주소: <span id="accountAddr"></span></li>
   <li>컨트랙트에 저장된 값: <span id="storedData"></span>
     <button onclick="getValue()">새로고침</button> (현재블록: <span id="lastBlock"></span>)</li>
-  <li><input id="newValue" type="text"><button onclick="setValue()">새 값으로 저장하기</button>
+  <li><input id="newValue" type="text"><button onclick="setReview()">새 값으로 저장하기</button>
       <div id="result"></div></li>
   <li>새 값을 저장한 후 팬딩 트랜잭션이 블록에 포함되면 자동으로 페이지가 업데이트될 것입니다.</li>
 </ul>
@@ -28,10 +28,112 @@
 <script src="https://cdn.rawgit.com/ethereum/web3.js/develop/dist/web3.js"></script>
 <!-- script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"></script -->
 <script>
-var contractAddress = '0xD476f4Bf3140C28343ce12a5255bB540ABF06Ac1';
-var abi = [{"constant":false,"inputs":[{"name":"x","type":"uint256"}],"name":"set","outputs":[],"payable":false,"type":"function"},{"constant":true,"inputs":[],"name":"get","outputs":[{"name":"","type":"uint256"}],"payable":false,"type":"function"}];
+var contractAddress = '0xefC85CD6B4BAbB4E09244Bc58f66F75f7fcD2da7';
+var abi = [
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "Reviews",
+		"outputs": [
+			{
+				"name": "writer",
+				"type": "address"
+			},
+			{
+				"name": "text",
+				"type": "string"
+			},
+			{
+				"name": "score",
+				"type": "string"
+			}
+		],
+		"payable": false,
+		"type": "function",
+		"stateMutability": "view"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"name": "x",
+				"type": "uint256"
+			}
+		],
+		"name": "set",
+		"outputs": [],
+		"payable": false,
+		"type": "function",
+		"stateMutability": "nonpayable"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "_ether",
+				"type": "address"
+			}
+		],
+		"name": "getReview",
+		"outputs": [
+			{
+				"name": "",
+				"type": "string"
+			}
+		],
+		"payable": false,
+		"type": "function",
+		"stateMutability": "view"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "get",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"type": "function",
+		"stateMutability": "view"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"name": "_ether",
+				"type": "address"
+			},
+			{
+				"name": "_text",
+				"type": "string"
+			},
+			{
+				"name": "_score",
+				"type": "string"
+			}
+		],
+		"name": "setReview",
+		"outputs": [],
+		"payable": false,
+		"type": "function",
+		"stateMutability": "nonpayable"
+	}
+];
 var simpleStorageContract;
 var simpleStorage;
+
+// block에 저장할 review 정보
+var reportName;
+var reportScore = 3.4;
+var reportText = 'good';
 
 window.addEventListener('load', function() {
 
@@ -49,14 +151,36 @@ window.addEventListener('load', function() {
 });
 
 function startApp() {
-  simpleStorageContract = web3.eth.contract(abi);
-  simpleStorage = simpleStorageContract.at(contractAddress);
-  document.getElementById('contractAddr').innerHTML = getLink(contractAddress);
-  web3.eth.getAccounts(function(e,r){
-    document.getElementById('accountAddr').innerHTML = getLink(r[0]);
-  });
+    // Modern DApp Browsers
+    if (window.ethereum) {
+        web3 = new Web3(window.ethereum);
+        try {
+            window.ethereum.enable().then(function () {
+                // User has allowed account access to DApp...
+            });
+        } catch (e) {
+            // User has denied account access to DApp...
+        }
+    }
+    // Legacy DApp Browsers
+    else if (window.web3) {
+        web3 = new Web3(web3.currentProvider);
+    }
+    // Non-DApp Browsers
+    else {
+        alert('You have to install MetaMask !');
+    }
+    simpleStorageContract = web3.eth.contract(abi);
+    simpleStorage = simpleStorageContract.at(contractAddress);
 
-  getValue();
+    document.getElementById('contractAddr').innerHTML = getLink(contractAddress);
+
+    web3.eth.getAccounts(function (e, r) {
+        //alert(getLink(r[0]));
+        document.getElementById('accountAddr').innerHTML = getLink(r[0]);
+    });
+    getValue();
+    getReview();
 }
 
 function getLink(addr) {
@@ -66,11 +190,20 @@ function getLink(addr) {
 function getValue() {
   simpleStorage.get(function(e,r){
     document.getElementById('storedData').innerHTML=r.toNumber();
-
   });
   web3.eth.getBlockNumber(function(e,r){
     document.getElementById('lastBlock').innerHTML = r;
   });
+}
+
+function getReview() {
+	// get score
+	simpleStorage.getReview(contractAddress, function(e,r){
+	document.getElementById('text').innerHTML=r.toString();
+	});
+	  web3.eth.getBlockNumber(function(e,r){
+		    document.getElementById('lastBlock').innerHTML = r;
+	});
 }
 
 function setValue() {
@@ -94,6 +227,25 @@ function setValue() {
    });
  });
 }
+
+function setReview() {
+	simpleStorage.setReview(contractAddress, reportText. reportScore, function(e,r){
+	    document.getElementById('result').innerHTML = 'Transaction id: ' + r + '<span id="pending" style="color:red;">(Pending)</span>';
+	    txid = r;
+	});
+	  var filter = web3.eth.filter('latest');
+	  filter.watch(function(e, r) {
+	    getValue();
+	    web3.eth.getTransaction(txid, function(e,r){
+	      if (r != null && r.blockNumber > 0) {
+	        document.getElementById('pending').innerHTML = '(기록된 블록: ' + r.blockNumber + ')';
+	        document.getElementById('pending').style.cssText ='color:green;';
+	        document.getElementById('text').style.cssText ='color:green; font-size:300%;';
+	        filter.stopWatching();
+	      }
+	   });
+	 });
+	}
 
 </script>
 </html>
