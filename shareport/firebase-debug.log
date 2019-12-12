@@ -1,25 +1,29 @@
-[debug] [2019-11-21T12:41:35.483Z] ----------------------------------------------------------------------
-[debug] [2019-11-21T12:41:35.484Z] Command:       /usr/local/bin/node /usr/local/bin/firebase serve
-[debug] [2019-11-21T12:41:35.485Z] CLI Version:   7.7.0
-[debug] [2019-11-21T12:41:35.485Z] Platform:      darwin
-[debug] [2019-11-21T12:41:35.485Z] Node Version:  v10.15.3
-[debug] [2019-11-21T12:41:35.485Z] Time:          Thu Nov 21 2019 21:41:35 GMT+0900 (GMT+09:00)
-[debug] [2019-11-21T12:41:35.485Z] ----------------------------------------------------------------------
-[debug] [2019-11-21T12:41:35.485Z] 
-[debug] [2019-11-21T12:41:35.496Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
-[debug] [2019-11-21T12:41:35.496Z] > authorizing via signed-in user
-[debug] [2019-11-21T12:41:35.496Z] [iam] checking project shareport-e85b2 for permissions ["firebase.projects.get"]
-[debug] [2019-11-21T12:41:35.498Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/shareport-e85b2:testIamPermissions  
+[debug] [2019-12-12T10:29:15.381Z] ----------------------------------------------------------------------
+[debug] [2019-12-12T10:29:15.383Z] Command:       /usr/local/bin/node /usr/local/bin/firebase serve
+[debug] [2019-12-12T10:29:15.384Z] CLI Version:   7.7.0
+[debug] [2019-12-12T10:29:15.384Z] Platform:      darwin
+[debug] [2019-12-12T10:29:15.384Z] Node Version:  v10.15.3
+[debug] [2019-12-12T10:29:15.390Z] Time:          Thu Dec 12 2019 19:29:15 GMT+0900 (GMT+09:00)
+[debug] [2019-12-12T10:29:15.390Z] ----------------------------------------------------------------------
+[debug] [2019-12-12T10:29:15.390Z] 
+[debug] [2019-12-12T10:29:15.407Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2019-12-12T10:29:15.407Z] > authorizing via signed-in user
+[debug] [2019-12-12T10:29:15.407Z] [iam] checking project shareport-e85b2 for permissions ["firebase.projects.get"]
+[debug] [2019-12-12T10:29:15.409Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2019-12-12T10:29:15.409Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2019-12-12T10:29:15.921Z] <<< HTTP RESPONSE 200
+[debug] [2019-12-12T10:29:15.937Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/shareport-e85b2:testIamPermissions  
 
-[debug] [2019-11-21T12:41:36.423Z] <<< HTTP RESPONSE 200
-[debug] [2019-11-21T12:41:36.425Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/shareport-e85b2  
+[debug] [2019-12-12T10:29:17.094Z] <<< HTTP RESPONSE 200
+[debug] [2019-12-12T10:29:17.095Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/shareport-e85b2  
  
-[debug] [2019-11-21T12:41:37.390Z] <<< HTTP RESPONSE 200
+[debug] [2019-12-12T10:29:18.320Z] <<< HTTP RESPONSE 200
 [info] 
 [info] === Serving from '/Users/halim/Desktop/shareport'...
 [info] 
-[debug] [2019-11-21T12:41:37.393Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/shareport-e85b2/webApps/-/config  
+[debug] [2019-12-12T10:29:18.323Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/shareport-e85b2/webApps/-/config  
  
-[debug] [2019-11-21T12:41:39.026Z] <<< HTTP RESPONSE 200
+[debug] [2019-12-12T10:29:20.020Z] <<< HTTP RESPONSE 200
 [info] i  hosting: Serving hosting files from: public
 [info] ✔  hosting: Local server: http://localhost:5000

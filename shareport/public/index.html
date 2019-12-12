@@ -1,231 +1,764 @@
-<!DOCTYPE html>
-<html lang="ko">
+<!DOCTYPE HTML>
+<!--
+	Future Imperfect by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>ShaRe:port</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
 
-<head>
-  <title id="titleCheck">SHAREPORT</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	</head>
+	<body class="is-preload">
 
+		<!-- Wrapper -->
+			<div id="wrapper">
 
-</head>
-
-<body>
-
-  <!-- 네비게이션 바 시작 -->
-  <nav class="navbar navbar-default navbar-fixed-top">
-    <div class="container-fluid">
-      <!-- Brand and toggle get grouped for better mobile display -->
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" href="/">SHAREPORT</a>
-      </div>
-
-      <!-- Collect the nav links, forms, and other content for toggling -->
-      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-        <ul class="nav navbar-nav">
-          <li class="active">
-            <a href="/">Home</a>
-          </li>
-          <li>
-            <a href="/mypage.html">마이페이지</a>
-          </li>
-          <li>
-            <a id="joinmenu" href="/join.html">가입</a>
-          </li>
-          <li>
-            <a id="loginmenu" href="/login.html">로그인</a>
-          </li>
-
-        </ul>
-      </div>
-      <!-- /.navbar-collapse -->
-    </div>
-    <!-- /.container-fluid -->
-  </nav>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-
-  <!-- 네비게이션 바 끝 -->
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="index.html">ShaRe:port</a></h1>
+						<nav class="links">
+							<ul>
+								<li><a href="#">Home</a></li>
+								<li><a href="mypage.html">My Page</a></li>
+								<li><a id="joinmenu" href="join.html">Join</a></li>
+								<li><a id="loginmenu" href="login.html">Log In</a></li>
+								<li><a href="#">Adipiscing</a></li>
+							</ul>
+						</nav>
+						<nav class="main">
+							<ul>
+								<li class="search">
+									<a class="fa-search" href="#search">Search</a>
+									<form id="search" method="get" action="#">
+										<input type="text" name="query" placeholder="Search" />
+									</form>
+								</li>
+								<li class="menu">
+									<a class="fa-bars" href="#menu">Menu</a>
+								</li>
+							</ul>
+						</nav>
+					</header>
 
 
 
-  <!-- 점보트론 시작 -->
-  <div class="container">
-    <div class="jumbotron">
-      <h1>
-        <span style="color:white">레포트를 공유합니다.</span>
-      </h1>
-      <p>
-        <span style="color:white">레포트를 공유할수 있는 shareport </span>
-      </p>
-    </div>
-  </div>
-  <br>
-  <!-- 점보트론 끝 -->
+				<!-- Menu -->
+					<section id="menu">
+
+						<!-- Search -->
+							<section>
+								<form class="search" method="get" action="#">
+									<input type="text" name="query" placeholder="Search" />
+								</form>
+							</section>
+
+						<!-- Links -->
+							<section>
+								<ul class="links">
+									<li>
+										<a href="#">
+											<h3>Home</h3>
+											<p>홈화면으로 돌아가기</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>마이페이지</h3>
+											<p>마이페이지로 가기</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>메뉴3</h3>
+											<p>메뉴3 내용</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>메뉴4</h3>
+											<p>메뉴4 내용</p>
+										</a>
+									</li>
+								</ul>
+							</section>
+
+						<!-- Actions -->
+							<section>
+								<ul class="actions stacked">
+									<li><a id="loginmenu" href="login.html" class="button large fit">Log In</a></li>
+								</ul>
+							</section>
+
+					</section>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<article class="post">
+								<header>
+									<div class="title">
+										<h2><a href="single.html">업로드한 레포트 제목</a></h2>
+										<p>레포트에 대한 부연설명</p>
+									</div>
+									<div class="meta">
+										<time class="published" datetime="2019-12-01">December 1, 2019</time>
+										<a href="#" class="author"><span class="name">닉네임</span><img src="images/avatar.jpg" alt="" /></a>
+									</div>
+								</header>
+								<a href="single.html" class="image featured"><img src="images/pic01.jpg" alt="" /></a>
+								<p>이 레포트는 어쩌구 저쩌구 부연설명 어쩌구 저쩌구 부연설명 어쩌구 저쩌구 부연설명 어쩌구 저쩌구 부연설명 어쩌구 저쩌구 부연설명 어쩌구 저쩌구 부연설명 어쩌구 저쩌구 부연설명 어쩌구 저쩌구 부연설명 어쩌구 저쩌구 부연설명 어쩌구 저쩌구 부연설명 </p>
+								<footer>
+									<ul class="actions">
+										<li><a href="single.html" class="button large">더 알아보기</a></li>
+									</ul>
+									<ul class="stats">
+										<li><a href="#">General</a></li>
+										<li><a href="#" class="icon solid fa-heart">28</a></li>
+										<li><a href="#" class="icon solid fa-comment">128</a></li>
+									</ul>
+								</footer>
+							</article>
+
+						<!-- Post -->
+							<article class="post">
+								<header>
+									<div class="title">
+										<h2><a href="single.html">Ultricies sed magna euismod enim vitae gravida</a></h2>
+										<p>Lorem ipsum dolor amet nullam consequat etiam feugiat</p>
+									</div>
+									<div class="meta">
+										<time class="published" datetime="2015-10-25">October 25, 2015</time>
+										<a href="#" class="author"><span class="name">Jane Doe</span><img src="images/avatar.jpg" alt="" /></a>
+									</div>
+								</header>
+								<a href="single.html" class="image featured"><img src="images/pic02.jpg" alt="" /></a>
+								<p>Mauris neque quam, fermentum ut nisl vitae, convallis maximus nisl. Sed mattis nunc id lorem euismod placerat. Vivamus porttitor magna enim, ac accumsan tortor cursus at. Phasellus sed ultricies mi non congue ullam corper.</p>
+								<footer>
+									<ul class="actions">
+										<li><a href="single.html" class="button large">Continue Reading</a></li>
+									</ul>
+									<ul class="stats">
+										<li><a href="#">General</a></li>
+										<li><a href="#" class="icon solid fa-heart">28</a></li>
+										<li><a href="#" class="icon solid fa-comment">128</a></li>
+									</ul>
+								</footer>
+							</article>
+
+						<!-- Post -->
+							<article class="post">
+								<header>
+									<div class="title">
+										<h2><a href="single.html">Euismod et accumsan</a></h2>
+										<p>Lorem ipsum dolor amet nullam consequat etiam feugiat</p>
+									</div>
+									<div class="meta">
+										<time class="published" datetime="2015-10-22">October 22, 2015</time>
+										<a href="#" class="author"><span class="name">Jane Doe</span><img src="images/avatar.jpg" alt="" /></a>
+									</div>
+								</header>
+								<a href="single.html" class="image featured"><img src="images/pic03.jpg" alt="" /></a>
+								<p>Mauris neque quam, fermentum ut nisl vitae, convallis maximus nisl. Sed mattis nunc id lorem euismod placerat. Vivamus porttitor magna enim, ac accumsan tortor cursus at. Phasellus sed ultricies mi non congue ullam corper. Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla. Cras vehicula tellus eu ligula viverra, ac fringilla turpis suscipit. Quisque vestibulum rhoncus ligula.</p>
+								<footer>
+									<ul class="actions">
+										<li><a href="single.html" class="button large">Continue Reading</a></li>
+									</ul>
+									<ul class="stats">
+										<li><a href="#">General</a></li>
+										<li><a href="#" class="icon solid fa-heart">28</a></li>
+										<li><a href="#" class="icon solid fa-comment">128</a></li>
+									</ul>
+								</footer>
+							</article>
+
+						<!-- Post -->
+						<!--
+							<article class="post">
+								<header>
+									<div class="title">
+										<h2><a href="#">Elements</a></h2>
+										<p>Lorem ipsum dolor amet nullam consequat etiam feugiat</p>
+									</div>
+									<div class="meta">
+										<time class="published" datetime="2015-10-18">October 18, 2015</time>
+										<a href="#" class="author"><span class="name">Jane Doe</span><img src="images/avatar.jpg" alt="" /></a>
+									</div>
+								</header>
+
+								<section>
+									<h3>Text</h3>
+									<p>This is <b>bold</b> and this is <strong>strong</strong>. This is <i>italic</i> and this is <em>emphasized</em>.
+									This is <sup>superscript</sup> text and this is <sub>subscript</sub> text.
+									This is <u>underlined</u> and this is code: <code>for (;;) { ... }</code>. Finally, <a href="#">this is a link</a>.</p>
+									<hr />
+									<p>Nunc lacinia ante nunc ac lobortis. Interdum adipiscing gravida odio porttitor sem non mi integer non faucibus ornare mi ut ante amet placerat aliquet. Volutpat eu sed ante lacinia sapien lorem accumsan varius montes viverra nibh in adipiscing blandit tempus accumsan.</p>
+									<hr />
+									<h2>Heading Level 2</h2>
+									<h3>Heading Level 3</h3>
+									<h4>Heading Level 4</h4>
+									<hr />
+									<h4>Blockquote</h4>
+									<blockquote>Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan faucibus. Vestibulum ante ipsum primis in faucibus lorem ipsum dolor sit amet nullam adipiscing eu felis.</blockquote>
+									<h4>Preformatted</h4>
+									<pre><code>i = 0;
+
+while (!deck.isInOrder()) {
+  print 'Iteration ' + i;
+  deck.shuffle();
+  i++;
+}
+
+print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
+								</section>
+
+								<section>
+									<h3>Lists</h3>
+									<div class="row">
+										<div class="col-6 col-12-medium">
+											<h4>Unordered</h4>
+											<ul>
+												<li>Dolor pulvinar etiam.</li>
+												<li>Sagittis adipiscing.</li>
+												<li>Felis enim feugiat.</li>
+											</ul>
+											<h4>Alternate</h4>
+											<ul class="alt">
+												<li>Dolor pulvinar etiam.</li>
+												<li>Sagittis adipiscing.</li>
+												<li>Felis enim feugiat.</li>
+											</ul>
+										</div>
+										<div class="col-6 col-12-medium">
+											<h4>Ordered</h4>
+											<ol>
+												<li>Dolor pulvinar etiam.</li>
+												<li>Etiam vel felis viverra.</li>
+												<li>Felis enim feugiat.</li>
+												<li>Dolor pulvinar etiam.</li>
+												<li>Etiam vel felis lorem.</li>
+												<li>Felis enim et feugiat.</li>
+											</ol>
+											<h4>Icons</h4>
+											<ul class="icons">
+												<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+												<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+												<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+												<li><a href="#" class="icon brands fa-github"><span class="label">Github</span></a></li>
+											</ul>
+										</div>
+									</div>
+									<h3>Actions</h3>
+									<div class="row">
+										<div class="col-6 col-12-medium">
+											<ul class="actions">
+												<li><a href="#" class="button">Default</a></li>
+												<li><a href="#" class="button">Default</a></li>
+												<li><a href="#" class="button">Default</a></li>
+											</ul>
+											<ul class="actions small">
+												<li><a href="#" class="button small">Small</a></li>
+												<li><a href="#" class="button small">Small</a></li>
+												<li><a href="#" class="button small">Small</a></li>
+											</ul>
+											<ul class="actions stacked">
+												<li><a href="#" class="button">Default</a></li>
+												<li><a href="#" class="button">Default</a></li>
+												<li><a href="#" class="button">Default</a></li>
+											</ul>
+											<ul class="actions stacked">
+												<li><a href="#" class="button small">Small</a></li>
+												<li><a href="#" class="button small">Small</a></li>
+												<li><a href="#" class="button small">Small</a></li>
+											</ul>
+										</div>
+										<div class="col-6 col-12-medium">
+											<ul class="actions stacked">
+												<li><a href="#" class="button fit">Default</a></li>
+												<li><a href="#" class="button fit">Default</a></li>
+											</ul>
+											<ul class="actions stacked">
+												<li><a href="#" class="button small fit">Small</a></li>
+												<li><a href="#" class="button small fit">Small</a></li>
+											</ul>
+										</div>
+									</div>
+								</section>
+
+								<section>
+									<h3>Table</h3>
+									<h4>Default</h4>
+									<div class="table-wrapper">
+										<table>
+											<thead>
+												<tr>
+													<th>Name</th>
+													<th>Description</th>
+													<th>Price</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td>Item One</td>
+													<td>Ante turpis integer aliquet porttitor.</td>
+													<td>29.99</td>
+												</tr>
+												<tr>
+													<td>Item Two</td>
+													<td>Vis ac commodo adipiscing arcu aliquet.</td>
+													<td>19.99</td>
+												</tr>
+												<tr>
+													<td>Item Three</td>
+													<td> Morbi faucibus arcu accumsan lorem.</td>
+													<td>29.99</td>
+												</tr>
+												<tr>
+													<td>Item Four</td>
+													<td>Vitae integer tempus condimentum.</td>
+													<td>19.99</td>
+												</tr>
+												<tr>
+													<td>Item Five</td>
+													<td>Ante turpis integer aliquet porttitor.</td>
+													<td>29.99</td>
+												</tr>
+											</tbody>
+											<tfoot>
+												<tr>
+													<td colspan="2"></td>
+													<td>100.00</td>
+												</tr>
+											</tfoot>
+										</table>
+									</div>
+
+									<h4>Alternate</h4>
+									<div class="table-wrapper">
+										<table class="alt">
+											<thead>
+												<tr>
+													<th>Name</th>
+													<th>Description</th>
+													<th>Price</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td>Item One</td>
+													<td>Ante turpis integer aliquet porttitor.</td>
+													<td>29.99</td>
+												</tr>
+												<tr>
+													<td>Item Two</td>
+													<td>Vis ac commodo adipiscing arcu aliquet.</td>
+													<td>19.99</td>
+												</tr>
+												<tr>
+													<td>Item Three</td>
+													<td> Morbi faucibus arcu accumsan lorem.</td>
+													<td>29.99</td>
+												</tr>
+												<tr>
+													<td>Item Four</td>
+													<td>Vitae integer tempus condimentum.</td>
+													<td>19.99</td>
+												</tr>
+												<tr>
+													<td>Item Five</td>
+													<td>Ante turpis integer aliquet porttitor.</td>
+													<td>29.99</td>
+												</tr>
+											</tbody>
+											<tfoot>
+												<tr>
+													<td colspan="2"></td>
+													<td>100.00</td>
+												</tr>
+											</tfoot>
+										</table>
+									</div>
+								</section>
+
+								<section>
+									<h3>Buttons</h3>
+									<ul class="actions">
+										<li><a href="#" class="button large">Large</a></li>
+										<li><a href="#" class="button">Default</a></li>
+										<li><a href="#" class="button small">Small</a></li>
+									</ul>
+									<ul class="actions fit">
+										<li><a href="#" class="button fit">Fit</a></li>
+										<li><a href="#" class="button fit">Fit</a></li>
+										<li><a href="#" class="button fit">Fit</a></li>
+									</ul>
+									<ul class="actions fit small">
+										<li><a href="#" class="button fit small">Fit + Small</a></li>
+										<li><a href="#" class="button fit small">Fit + Small</a></li>
+										<li><a href="#" class="button fit small">Fit + Small</a></li>
+									</ul>
+									<ul class="actions">
+										<li><a href="#" class="button icon solid fa-download">Icon</a></li>
+										<li><a href="#" class="button icon solid fa-upload">Icon</a></li>
+										<li><a href="#" class="button icon solid fa-save">Icon</a></li>
+									</ul>
+									<ul class="actions">
+										<li><span class="button disabled">Disabled</span></li>
+										<li><span class="button disabled icon solid fa-download">Disabled</span></li>
+									</ul>
+								</section>
+
+								<section>
+									<h3>Form</h3>
+									<form method="post" action="#">
+										<div class="row gtr-uniform">
+											<div class="col-6 col-12-xsmall">
+												<input type="text" name="demo-name" id="demo-name" value="" placeholder="Name" />
+											</div>
+											<div class="col-6 col-12-xsmall">
+												<input type="email" name="demo-email" id="demo-email" value="" placeholder="Email" />
+											</div>
+											<div class="col-12">
+												<select name="demo-category" id="demo-category">
+													<option value="">- Category -</option>
+													<option value="1">Manufacturing</option>
+													<option value="1">Shipping</option>
+													<option value="1">Administration</option>
+													<option value="1">Human Resources</option>
+												</select>
+											</div>
+											<div class="col-4 col-12-small">
+												<input type="radio" id="demo-priority-low" name="demo-priority" checked>
+												<label for="demo-priority-low">Low</label>
+											</div>
+											<div class="col-4 col-12-small">
+												<input type="radio" id="demo-priority-normal" name="demo-priority">
+												<label for="demo-priority-normal">Normal</label>
+											</div>
+											<div class="col-4 col-12-small">
+												<input type="radio" id="demo-priority-high" name="demo-priority">
+												<label for="demo-priority-high">High</label>
+											</div>
+											<div class="col-6 col-12-small">
+												<input type="checkbox" id="demo-copy" name="demo-copy">
+												<label for="demo-copy">Email me a copy</label>
+											</div>
+											<div class="col-6 col-12-small">
+												<input type="checkbox" id="demo-human" name="demo-human" checked>
+												<label for="demo-human">Not a robot</label>
+											</div>
+											<div class="col-12">
+												<textarea name="demo-message" id="demo-message" placeholder="Enter your message" rows="6"></textarea>
+											</div>
+											<div class="col-12">
+												<ul class="actions">
+													<li><input type="submit" value="Send Message" /></li>
+													<li><input type="reset" value="Reset" /></li>
+												</ul>
+											</div>
+										</div>
+									</form>
+								</section>
+
+								<section>
+									<h3>Image</h3>
+									<h4>Fit</h4>
+									<div class="box alt">
+										<div class="row gtr-uniform">
+											<div class="col-12"><span class="image fit"><img src="images/pic02.jpg" alt="" /></span></div>
+											<div class="col-4"><span class="image fit"><img src="images/pic04.jpg" alt="" /></span></div>
+											<div class="col-4"><span class="image fit"><img src="images/pic05.jpg" alt="" /></span></div>
+											<div class="col-4"><span class="image fit"><img src="images/pic06.jpg" alt="" /></span></div>
+											<div class="col-4"><span class="image fit"><img src="images/pic06.jpg" alt="" /></span></div>
+											<div class="col-4"><span class="image fit"><img src="images/pic04.jpg" alt="" /></span></div>
+											<div class="col-4"><span class="image fit"><img src="images/pic05.jpg" alt="" /></span></div>
+											<div class="col-4"><span class="image fit"><img src="images/pic05.jpg" alt="" /></span></div>
+											<div class="col-4"><span class="image fit"><img src="images/pic06.jpg" alt="" /></span></div>
+											<div class="col-4"><span class="image fit"><img src="images/pic04.jpg" alt="" /></span></div>
+										</div>
+									</div>
+									<h4>Left &amp; Right</h4>
+									<p><span class="image left"><img src="images/pic07.jpg" alt="" /></span>Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent.</p>
+									<p><span class="image right"><img src="images/pic04.jpg" alt="" /></span>Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent.</p>
+								</section>
+
+							</article>
+						-->
+
+						<!-- Pagination -->
+							<ul class="actions pagination">
+								<li><a href="" class="disabled button large previous">Previous Page</a></li>
+								<li><a href="#" class="button large next">Next Page</a></li>
+							</ul>
+
+					</div>
+
+				<!-- Sidebar -->
+					<section id="sidebar">
+
+						<!-- Intro -->
+							<section id="intro">
+								<a href="#" class="logo"><img src="images/logo.png" alt="" /></a>
+								<header>
+									<h2>Shareport</h2>
+									<p>여러분의 레포트를 공유헤보세요 </p>
+								</header>
+							</section>
+
+						<!-- Mini Posts -->
+							<section>
+								<div class="mini-posts">
+
+									<!-- Mini Post -->
+										<article class="mini-post">
+											<header>
+												<h3><a href="single.html">최근에 올라왔던 레포트</a></h3>
+												<time class="published" datetime="2015-10-20">October 20, 2015</time>
+												<a href="#" class="author"><img src="images/avatar.jpg" alt="" /></a>
+											</header>
+											<a href="single.html" class="image"><img src="images/pic04.jpg" alt="" /></a>
+										</article>
+
+									<!-- Mini Post -->
+										<article class="mini-post">
+											<header>
+												<h3><a href="single.html">Rutrum neque accumsan</a></h3>
+												<time class="published" datetime="2015-10-19">October 19, 2015</time>
+												<a href="#" class="author"><img src="images/avatar.jpg" alt="" /></a>
+											</header>
+											<a href="single.html" class="image"><img src="images/pic05.jpg" alt="" /></a>
+										</article>
+
+									<!-- Mini Post -->
+										<article class="mini-post">
+											<header>
+												<h3><a href="single.html">Odio congue mattis</a></h3>
+												<time class="published" datetime="2015-10-18">October 18, 2015</time>
+												<a href="#" class="author"><img src="images/avatar.jpg" alt="" /></a>
+											</header>
+											<a href="single.html" class="image"><img src="images/pic06.jpg" alt="" /></a>
+										</article>
+
+									<!-- Mini Post -->
+										<article class="mini-post">
+											<header>
+												<h3><a href="single.html">Enim nisl veroeros</a></h3>
+												<time class="published" datetime="2015-10-17">October 17, 2015</time>
+												<a href="#" class="author"><img src="images/avatar.jpg" alt="" /></a>
+											</header>
+											<a href="single.html" class="image"><img src="images/pic07.jpg" alt="" /></a>
+										</article>
+
+								</div>
+							</section>
+
+						<!-- Posts List -->
+							<section>
+								<ul class="posts">
+									<li>
+										<article>
+											<header>
+												<h3><a href="single.html">미니포스트 레포트 제목</a></h3>
+												<time class="published" datetime="2015-10-20">October 20, 2015</time>
+											</header>
+											<a href="single.html" class="image"><img src="images/pic08.jpg" alt="" /></a>
+										</article>
+									</li>
+									<li>
+										<article>
+											<header>
+												<h3><a href="single.html">Convallis maximus nisl mattis nunc id lorem</a></h3>
+												<time class="published" datetime="2015-10-15">October 15, 2015</time>
+											</header>
+											<a href="single.html" class="image"><img src="images/pic09.jpg" alt="" /></a>
+										</article>
+									</li>
+									<li>
+										<article>
+											<header>
+												<h3><a href="single.html">Euismod amet placerat vivamus porttitor</a></h3>
+												<time class="published" datetime="2015-10-10">October 10, 2015</time>
+											</header>
+											<a href="single.html" class="image"><img src="images/pic10.jpg" alt="" /></a>
+										</article>
+									</li>
+									<li>
+										<article>
+											<header>
+												<h3><a href="single.html">Magna enim accumsan tortor cursus ultricies</a></h3>
+												<time class="published" datetime="2015-10-08">October 8, 2015</time>
+											</header>
+											<a href="single.html" class="image"><img src="images/pic11.jpg" alt="" /></a>
+										</article>
+									</li>
+									<li>
+										<article>
+											<header>
+												<h3><a href="single.html">Congue ullam corper lorem ipsum dolor</a></h3>
+												<time class="published" datetime="2015-10-06">October 7, 2015</time>
+											</header>
+											<a href="single.html" class="image"><img src="images/pic12.jpg" alt="" /></a>
+										</article>
+									</li>
+								</ul>
+							</section>
+
+						<!-- About -->
+							<section class="blurb">
+								<h2>About</h2>
+								<p>Mauris neque quam, fermentum ut nisl vitae, convallis maximus nisl. Sed mattis nunc id lorem euismod amet placerat. Vivamus porttitor magna enim, ac accumsan tortor cursus at phasellus sed ultricies.</p>
+								<ul class="actions">
+									<li><a href="#" class="button">Learn More</a></li>
+								</ul>
+							</section>
+
+						<!-- Footer -->
+							<section id="footer">
+								<ul class="icons">
+									<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+									<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+									<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+									<li><a href="#" class="icon solid fa-rss"><span class="label">RSS</span></a></li>
+									<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+								</ul>
+								<p class="copyright">&copy; Untitled. Design: <a href="http://html5up.net">HTML5 UP</a>. Images: <a href="http://unsplash.com">Unsplash</a>.</p>
+							</section>
+
+					</section>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+			<script src="./js/time.js"></script>
+	    <script src="./js/sessionCheck.js"></script>
+			<script src="https://www.gstatic.com/firebasejs/4.10.1/firebase.js"></script>
+<script>
+	var firebaseEmailAuth; //파이어베이스 email 인증 모듈 전역변수
+	var firebaseDatabase; //파이어베이스 db 모듈 전역변수
+	var name; //유저 이름
+	var loginUserKey; //로그인한 유저의 부모 key
+	var userInfo; //로그인한 유저의 정보 object type
+	var comment;
+
+	//파이어 베이스 초기화 코드
+	var config = {
+		apiKey: "AIzaSyBealjJBHfcbRlptxLcAoxdhpSbFswQOZg",
+		authDomain: "shareport-e85b2.firebaseapp.com",
+		databaseURL: "https://shareport-e85b2.firebaseio.com",
+		projectId: "shareport-e85b2",
+		storageBucket: "shareport-e85b2.appspot.com",
+		messagingSenderId: "978150427508",
+		appId: "1:978150427508:web:115635132ce73e50223a21",
+		measurementId: "G-1SB8TYEZ99"
+	};
+	//파이어베이스 초기화
+	firebase.initializeApp(config);
+	//인증모듈 객체 가져오기
+	firebaseEmailAuth = firebase.auth();
+	//데이터베이스 모듈객체 가져오기
+	firebaseDatabase = firebase.database();
+
+	//세션 체크 함수
+	userSessionCheck();
+	$(document).ready(function() {
+
+		//메인화면 감사일기 쓰기버튼 눌렀을 때
+		$(document).on('click', '.write', function() {
+
+			//네비게이션 메뉴의 text값 가져오기 - 자바스크립트 dom 방식으로 가져왔다.
+			var seseionCheck = document.getElementById("loginmenu").textContent;
+
+			//내가 쓴글 가져오기 - jquery방식으로 가져왔다.
+			//comment = $('#comment').val();
+			if (seseionCheck == "로그아웃") {
+				//저장하기
+				saveReplys();
+			} else {
+				alert("로그인이 필요한 서비스 입니다.")
+			}
+		});
+	});
 
 
-  <!-- 쓰기 텍스트 필드 시작-->
-  <div class="container">
-    <div class="form-group">
-      <label for="comment">텍스트 or 댓글 기능</label>
-      <textarea class="form-control" rows="5" id="comment" placeholder="내용을 입력하세요"></textarea>
-      <br>
 
-      <!-- 쓰기 버튼 가운데 정렬 -->
-      <div class="text-center">
-        <button type="button" class="btn btn-success write" id="write" name="write">쓰기</button>
-      </div>
-    </div>
-  </div>
-  <!-- 쓰기 텍스트 필드 끝-->
+	//쓰기 버튼 눌렀을 때 호출 되는 함수
+	function saveReplys() {
 
+		//thanks 라는 테이블을 만들고 하위 데이터에 유저 아이디를 넣어준다. 그곳에 push로 가상의 키를 넣고, 객체를 넣어준다.!!!!
+		var replyRef = firebaseDatabase.ref("comments");
 
+		// 해당 객체의 key 값이 자동으로 생성된다.
+		var reply = replyRef.push(); // 해당 객체의 key 값이 자동으로 생성된다.
 
-  <!-- 리스트 출력하기-->
-  <div class="container">
-    <hr>
-    <h3>댓글리스트</h3>
-    <br>
-    <!-- 리스트 붙일 곳 -->
-    <div class="replyList"></div>
-  </div>
-  <script src="./js/time.js"></script>
-  <script src="./js/sessionCheck.js"></script>
+		//로그인한 유저의 pk값,이름,내용,시간 데이터
+		var obj = {
+			userkey: loginUserKey,
+			name: name,
+			comment: comment,
+			createtime: currentTime
+		};
+		//위에서 thankRef.push()로 만들어진 key아래 위치에 저장해준다.
+		reply.set(obj);
+
+		alert("등록완료");
+
+		$('#comment').val("");
+	}
 
 
 
-  <script src="https://www.gstatic.com/firebasejs/4.10.1/firebase.js"></script>
-  <script>
-    var firebaseEmailAuth; //파이어베이스 email 인증 모듈 전역변수
-    var firebaseDatabase; //파이어베이스 db 모듈 전역변수
-    var name; //유저 이름
-    var loginUserKey; //로그인한 유저의 부모 key
-    var userInfo; //로그인한 유저의 정보 object type
-    var comment;
+	function replyList() {
+		alert("CommentList")
+		//로그인한 유저라면
+		if (loginUserKey) {
+			alert(loginUserKey)
+			//글이 저장된 레퍼런스 값 가져오기
+			var replyRef = firebaseDatabase.ref('comments');
+			//on 함수로 글 목록가져오기
+			replyRef.on('child_added', on_reply_list)
+		} else {
+			alert("실패")
+			return;
+		}
+	}
 
-    //파이어 베이스 초기화 코드
-    var config = {
-      apiKey: "AIzaSyBealjJBHfcbRlptxLcAoxdhpSbFswQOZg",
-      authDomain: "shareport-e85b2.firebaseapp.com",
-      databaseURL: "https://shareport-e85b2.firebaseio.com",
-      projectId: "shareport-e85b2",
-      storageBucket: "shareport-e85b2.appspot.com",
-      messagingSenderId: "978150427508",
-      appId: "1:978150427508:web:115635132ce73e50223a21",
-      measurementId: "G-1SB8TYEZ99"
-    };
-    //파이어베이스 초기화
-    firebase.initializeApp(config);
-    //인증모듈 객체 가져오기
-    firebaseEmailAuth = firebase.auth();
-    //데이터베이스 모듈객체 가져오기
-    firebaseDatabase = firebase.database();
+	//땡스리스트 thanks 테이블의 thanks 키 들을 연속적으로 가져온다.
+	function on_reply_list(data) {
+		console.log("on_reply_list() 함수안으로 들어왔습니다 리스트를 가져오겠습니다")
+		var key = data.key;
 
-    //세션 체크 함수
-    userSessionCheck();
-    $(document).ready(function() {
+		var Data = data.val();
+		var comment = Data.comment;
+		var createtime = Data.createtime;
+		var name = Data.name;
+		var userkey = Data.userkey;
 
-      //메인화면 감사일기 쓰기버튼 눌렀을 때
-      $(document).on('click', '.write', function() {
-
-        //네비게이션 메뉴의 text값 가져오기 - 자바스크립트 dom 방식으로 가져왔다.
-        var seseionCheck = document.getElementById("loginmenu").textContent;
-
-        //내가 쓴글 가져오기 - jquery방식으로 가져왔다.
-        comment = $('#comment').val();
-        if (seseionCheck == "로그아웃") {
-          //저장하기
-          saveReplys();
-        } else {
-          alert("로그인이 필요한 서비스 입니다.")
-        }
-      });
-    });
+		//alert(comment +"/"+ createtime + "/"+name +"/"+userkey);
 
 
+		//감사리스트 동적으로 붙이기
+		var html =
+			"<div class=\"media\" id='" + userkey + "' onclick=\"show_user_page(this.id)\">" +
+			"<div class=\"media-body\">" +
+			"<h4 class=\"media-heading\">" + name +
+			" <span STYLE=\"color: green; font-size: 5pt\">" + createtime + "</span></h4>" +
+			"<p>" + comment + "</p></div></div>" +
+			"<hr>";
 
-    //쓰기 버튼 눌렀을 때 호출 되는 함수
-    function saveReplys() {
+		$(".replyList").append(html);
 
-      //thanks 라는 테이블을 만들고 하위 데이터에 유저 아이디를 넣어준다. 그곳에 push로 가상의 키를 넣고, 객체를 넣어준다.!!!!
-      var replyRef = firebaseDatabase.ref("comments");
-
-      // 해당 객체의 key 값이 자동으로 생성된다.
-      var reply = replyRef.push(); // 해당 객체의 key 값이 자동으로 생성된다.
-
-      //로그인한 유저의 pk값,이름,내용,시간 데이터
-      var obj = {
-        userkey: loginUserKey,
-        name: name,
-        comment: comment,
-        createtime: currentTime
-      };
-      //위에서 thankRef.push()로 만들어진 key아래 위치에 저장해준다.
-      reply.set(obj);
-
-      alert("등록완료");
-
-      $('#comment').val("");
-    }
+	}
+</script>
 
 
-
-    function replyList() {
-      alert("CommentList")
-      //로그인한 유저라면
-      if (loginUserKey) {
-        alert(loginUserKey)
-        //글이 저장된 레퍼런스 값 가져오기
-        var replyRef = firebaseDatabase.ref('comments');
-        //on 함수로 글 목록가져오기
-        replyRef.on('child_added', on_reply_list)
-      } else {
-        alert("실패")
-        return;
-      }
-    }
-
-    //땡스리스트 thanks 테이블의 thanks 키 들을 연속적으로 가져온다.
-    function on_reply_list(data) {
-      console.log("on_reply_list() 함수안으로 들어왔습니다 리스트를 가져오겠습니다")
-      var key = data.key;
-
-      var Data = data.val();
-      var comment = Data.comment;
-      var createtime = Data.createtime;
-      var name = Data.name;
-      var userkey = Data.userkey;
-
-      //alert(comment +"/"+ createtime + "/"+name +"/"+userkey);
-
-
-      //감사리스트 동적으로 붙이기
-      var html =
-        "<div class=\"media\" id='" + userkey + "' onclick=\"show_user_page(this.id)\">" +
-        "<div class=\"media-body\">" +
-        "<h4 class=\"media-heading\">" + name +
-        " <span STYLE=\"color: green; font-size: 5pt\">" + createtime + "</span></h4>" +
-        "<p>" + comment + "</p></div></div>" +
-        "<hr>";
-
-      $(".replyList").append(html);
-
-    }
-  </script>
-
-
-
-</body>
-
+	</body>
 </html>
