@@ -1,0 +1,197 @@
+<!DOCTYPE HTML>
+<!--
+	Future Imperfect by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+  <title>Single - Future Imperfect by HTML5 UP</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <link rel="stylesheet" href="assets/css/main.css" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+
+<body class="single is-preload">
+
+  <!-- Wrapper -->
+  <div id="wrapper">
+
+    <!-- Header -->
+    <header id="header">
+      <h1><a href="index.html">Future Imperfect</a></h1>
+      <nav class="links">
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">My Page</a></li>
+          <li><a id="joinmenu" href="#">Join</a></li>
+          <li><a id="loginmenu" href="login.html">Log In</a></li>
+          <li><a href="#">Adipiscing</a></li>
+        </ul>
+      </nav>
+      <nav class="main">
+        <ul>
+          <li class="search">
+            <a class="fa-search" href="#search">Search</a>
+            <form id="search" method="get" action="#">
+              <input type="text" name="query" placeholder="Search" />
+            </form>
+          </li>
+          <li class="menu">
+            <a class="fa-bars" href="#menu">Menu</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Menu -->
+    <section id="menu">
+
+      <!-- Search -->
+      <section>
+        <form class="search" method="get" action="#">
+          <input type="text" name="query" placeholder="Search" />
+        </form>
+      </section>
+
+      <!-- Links -->
+      <section>
+        <ul class="links">
+          <li>
+            <a href="#">
+              <h3>Lorem ipsum</h3>
+              <p>Feugiat tempus veroeros dolor</p>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <h3>Dolor sit amet</h3>
+              <p>Sed vitae justo condimentum</p>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <h3>Feugiat veroeros</h3>
+              <p>Phasellus sed ultricies mi congue</p>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <h3>Etiam sed consequat</h3>
+              <p>Porta lectus amet ultricies</p>
+            </a>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Actions -->
+      <section>
+        <ul class="actions stacked">
+          <li><a href="#" class="button large fit">Log In</a></li>
+        </ul>
+      </section>
+
+    </section>
+
+    <!-- Main -->
+    <div id="main">
+
+      <!-- Post -->
+      <article class="post">
+      
+      </article>
+
+    </div>
+
+
+
+    <!-- Footer -->
+    <section id="footer">
+      <ul class="icons">
+        <li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+        <li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+        <li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+        <li><a href="#" class="icon solid fa-rss"><span class="label">RSS</span></a></li>
+        <li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+      </ul>
+      <p class="copyright">&copy; Untitled. Design: <a href="http://html5up.net">HTML5 UP</a>. Images: <a href="http://unsplash.com">Unsplash</a>.</p>
+    </section>
+
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://www.gstatic.com/firebasejs/4.10.1/firebase.js"></script>
+  <script>
+    var firebaseEmailAuth; //파이어베이스 email 인증 모듈 전역변수
+    var firebaseDatabase; //파이어베이스 db 모듈 전역변수
+    var userInfo; //가입한 유저의 정보. object 타입
+    //파이어 베이스 초기화 코드
+    var config = {
+      apiKey: "AIzaSyBealjJBHfcbRlptxLcAoxdhpSbFswQOZg",
+      authDomain: "shareport-e85b2.firebaseapp.com",
+      databaseURL: "https://shareport-e85b2.firebaseio.com",
+      projectId: "shareport-e85b2",
+      storageBucket: "shareport-e85b2.appspot.com",
+      messagingSenderId: "978150427508",
+      appId: "1:978150427508:web:115635132ce73e50223a21",
+      measurementId: "G-1SB8TYEZ99"
+    };
+    firebase.initializeApp(config);
+
+    firebaseEmailAuth = firebase.auth(); //파이어베이스 인증 객체
+    firebaseDatabase = firebase.database(); //파이어베이스 데이터베이스 객체
+
+
+
+    //제이쿼리를 사용한다.
+    $(document).ready(function() {
+
+      //가입버튼 눌렀을 때
+      $(document).on('click', '.login', function() {
+
+        //제이쿼리 선택자와 val() 함수를 이용해서 이메일,비밀번호 값을 가져온다.
+        var email = $('#email').val();
+        var password = $('#pwd').val();
+        alert("로그인 버튼 눌렸음" + email + ":" + password);
+
+        //파이어베이스 이메일 로그인 함수
+        firebaseEmailAuth.signInWithEmailAndPassword(email, password)
+          .then(function(firebaseUser) {
+
+            //성공하면 firebaseUser에 유저 정보 값이 담겨 넘어온다.
+            loginSuccess(firebaseUser);
+
+          })
+          .catch(function(error) {
+            // 실패했을 때 에러 처리
+            alert(error);
+            alert("로그인 실패");
+          });
+
+      });
+    });
+
+    //로그인 성공했을 때
+    function loginSuccess(firebaseUser) {
+      alert("로그인 성공");
+
+      //로그인 성공한 유저 id 확인해 보기 - firebase database에 접근해서 데이터 조회 하는 함수
+      firebaseDatabase.ref("users/" + firebaseUser.uid).once('value').then(function(snapshot) {
+        alert(snapshot.val().name)
+      });
+
+      //메인 페이지로 이동
+      window.location.href = "/index.html"
+    }
+  </script>
+  <script src="assets/js/jquery.min.js"></script>
+  <script src="assets/js/browser.min.js"></script>
+  <script src="assets/js/breakpoints.min.js"></script>
+  <script src="assets/js/util.js"></script>
+  <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>

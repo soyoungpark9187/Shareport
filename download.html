@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Uploading file</title>
+<style media = "screen">
+body {
+display: flex;
+min-height: 100vh;
+width: 100%;
+padding: 0;
+margin: 0;
+align-items: center;
+justify-content: center;
+flex-direction: column;
+}
+
+#uploader {
+-webkit-appearance: none;
+width: 50%;
+margin-botton:10px;
+}
+</style>
+</head>
+<body>
+
+<button type="button" id="downloadButton">download</button>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.3.0/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/7.3.0/firebase-analytics.js"></script>
+
+<script src="https://www.gstatic.com/firebasejs/7.3.0/firebase-storage.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+	apiKey: "AIzaSyBealjJBHfcbRlptxLcAoxdhpSbFswQOZg",
+	authDomain: "shareport-e85b2.firebaseapp.com",
+	databaseURL: "https://shareport-e85b2.firebaseio.com",
+	projectId: "shareport-e85b2",
+	storageBucket: "shareport-e85b2.appspot.com",
+	messagingSenderId: "978150427508",
+	appId: "1:978150427508:web:115635132ce73e50223a21",
+	measurementId: "G-1SB8TYEZ99"
+  };
+  // Initialize Firebase
+  var defaultProject = firebase.initializeApp(firebaseConfig);
+  console.log(defaultProject.name);
+
+  firebase.analytics();
+  var storage = firebase.storage();
+
+  var uploader= document.getElementById('uploader');
+  var downloadButton = document.getElementById('downloadButton');
+  
+  var user_name = 'sweet_gifs';
+  var file_name = 'radio.png';
+	 
+	// Create a reference to the file we want to download
+	 var fileRef = storage.ref(user_name+'/'+file_name);
+
+	 downloadButton.addEventListener('click', function(){
+		 fileRef.getDownloadURL().then(function(url) {
+		 console.log("download");
+		 console.log(url);
+		 })
+	 });
+</script>
+
+</body>
+</html>
