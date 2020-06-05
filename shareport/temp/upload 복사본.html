@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<style media = "screen">
+body {
+display: flex;
+min-height: 100vh;
+width: 100%;
+padding: 0;
+margin: 0;
+align-items: center;
+justify-content: center;
+flex-direction: column;
+}
+
+#uploader {
+-webkit-appearance: none;
+width: 50%;
+margin-botton:10px;
+}
+</style>
+</head>
+<body>
+<progress value = "0" max="100" id="uploader">0%</progress>
+<input type="file" value="upload" id="fileButton"/>
+<input type="file" value="upload" id="seg1Button"/>
+<input type="file" value="upload" id="seg2Button"/>
+<input type="file" value="upload" id="seg3Button"/>
+<button type="button" id="uploadButton">upload</button>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.3.0/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/7.3.0/firebase-analytics.js"></script>
+
+<script src="https://www.gstatic.com/firebasejs/7.3.0/firebase-storage.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyBealjJBHfcbRlptxLcAoxdhpSbFswQOZg",
+    authDomain: "shareport-e85b2.firebaseapp.com",
+    databaseURL: "https://shareport-e85b2.firebaseio.com",
+    projectId: "shareport-e85b2",
+    storageBucket: "shareport-e85b2.appspot.com",
+    messagingSenderId: "978150427508",
+    appId: "1:978150427508:web:115635132ce73e50223a21",
+    measurementId: "G-1SB8TYEZ99"
+  };
+  // Initialize Firebase
+  var defaultProject = firebase.initializeApp(firebaseConfig);
+  console.log(defaultProject.name);
+
+  firebase.analytics();
+
+  var uploader= document.getElementById('uploader');
+  var fileButton = document.getElementById('fileButton');
+  var uploadButton = document.getElementById('uploadButton');
+  var seg1Button = document.getElementById('seg1Button');
+  var file;
+  var file_s1;
+  var file_s2;
+  var file_s3;
+  // TODO: 여기를 유저 이름으로 바꿔주세요
+  var user_name= "soyoung/";
+  var storageRef;
+  var task;
+  var storageRef_s1;
+  var task_s1;
+  var storageRef_s2;
+  var task_s2;
+  var storageRef_s3;
+  var task_s3;
+  fileButton.addEventListener('change', function(e) {
+    //get file
+    file = e.target.files[0];
+
+    // create a storage ref
+    storageRef =  firebase.storage().ref(user_name+file.name+"/"+"main/"+file.name);
+
+    });
+  seg1Button.addEventListener('change', function(e) {
+       //get file
+       file_s1 = e.target.files[0];
+
+       // create a storage ref
+       storageRef_s1 =  firebase.storage().ref(user_name+file.name+"/"+'seg1');
+
+       });
+  seg2Button.addEventListener('change', function(e) {
+       //get file
+       file_s2 = e.target.files[0];
+
+       // create a storage ref
+       storageRef_s2 =  firebase.storage().ref(user_name+file.name+"/"+'seg2');
+
+       });
+  seg3Button.addEventListener('change', function(e) {
+       //get file
+       file_s3 = e.target.files[0];
+
+       // create a storage ref
+       storageRef_s3 =  firebase.storage().ref(user_name+file.name+"/"+'seg3');
+
+       });
+  uploadButton.addEventListener('click', function(){
+   // upload file
+       task = storageRef.put(file);
+       task = storageRef_s1.put(file_s1);
+       task = storageRef_s2.put(file_s2);
+       task = storageRef_s3.put(file_s3);
+
+          // update progress bar
+      task.on('state_changed',
+
+            function progress(snapshot) {
+            var percentage =(snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+            uploader.value = percentage;
+            },
+
+               function error(err) {
+
+              },
+
+             // finished uploading
+               function complete() {
+
+               }
+
+       );
+     });
+
+</script>
+
+</body>
+</html>
