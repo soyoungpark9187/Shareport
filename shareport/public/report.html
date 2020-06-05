@@ -1,0 +1,660 @@
+
+<!DOCTYPE HTML>
+<!--
+	Future Imperfect by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title id="titleCheck">Single - Future Imperfect by HTML5 UP</title>
+
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="assets/css/main.css" />
+	<!-- <style>
+		.star-rating {width:304px; }
+		.star-rating,.star-rating span {display:inline-block; height:55px; overflow:hidden; background:url("images/star.png")no-repeat; }
+		.star-rating span{background-position:left bottom; line-height:0; vertical-align:top; }
+		</style> -->
+</head>
+
+<body class="single is-preload">
+
+	<!-- Wrapper -->
+	<div id="wrapper">
+
+		<!-- Header -->
+		<header id="header">
+			<h1><a href="index.html">ShaRe:port</a></h1>
+			<nav class="links">
+				<ul>
+					<li><a href="#">Home</a></li>
+					<li><a href="mypage.html">My Page</a></li>
+					<li><a id="joinmenu" href="join.html">Join</a></li>
+					<li><a id="loginmenu" href="login.html">Log In</a></li>
+
+				</ul>
+			</nav>
+			<nav class="main">
+				<ul>
+					<li class="search">
+						<a class="fa-search" href="#search">Search</a>
+						<form id="search" method="get" action="#">
+							<input type="text" name="query" placeholder="Search" />
+						</form>
+					</li>
+					<li class="menu">
+						<a class="fa-bars" href="#menu">Menu</a>
+					</li>
+				</ul>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<section id="menu">
+
+			<!-- Search -->
+			<section>
+				<form class="search" method="get" action="#">
+					<input type="text" name="query" placeholder="Search" />
+				</form>
+			</section>
+
+			<!-- Links -->
+				<section>
+					<ul class="links">
+						<li>
+							<a href="#">
+								<h3>Home</h3>
+								<p>홈화면으로 돌아가기</p>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<h3>My Page</h3>
+								<p>마이페이지로 가기</p>
+							</a>
+						</li>
+						<li>
+							<a href="upload.html">
+								<h3>Upload</h3>
+								<p>레포트 업로드 하가</p>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<h3>Customer Service</h3>
+								<p>고객센터</p>
+							</a>
+						</li>
+					</ul>
+				</section>
+
+			<!-- Actions -->
+			<section>
+				<ul class="actions stacked">
+					<li><a id="loginmenu" href="login.html" class="button large fit">Log In</a></li>
+				</ul>
+			</section>
+
+		</section>
+
+
+		<!-- Main -->
+		<div id="main">
+
+			<!-- Post -->
+			<article class="post">
+				<header>
+					<div class="title">
+						<h2><a href="#" id="reportTitle">레포트 제목</a></h2>
+						<p>Lorem ipsum dolor amet nullam consequat etiam feugiat</p>
+					</div>
+
+					<div class="meta">
+
+						<a href="#" class="author"><span class="name" id="reportWriter">Jane Doe</span><img src="images/avatar.jpg" alt="" /></a>
+
+					</div>
+				</header>
+
+				<br>
+				<br>
+				<br>
+				<ul>
+				<li>
+				<a id="main">전 체</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ 				<button type="button" id="downloadButton">download</button><br><br><br>
+			</li>
+			<li>
+				<a id="seg1">레포트1</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				<button type="button" id="downloadseg1Button">download</button><br><br><br>
+			</li>
+			<li>
+				<a id="seg2">레포트2</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				<button type="button" id="downloadseg2Button">download</button><br><br><br>
+			</li>
+			<li>
+				<a id="seg3">레포트3</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				<button type="button" id="downloadseg3Button">download</button><br><br><br>
+			</li>
+			</ul>
+				<br>
+				<br>
+
+				<br>
+				<br>
+				<footer>
+					<ul class="stats">
+						<li><a href="#" class="icon solid fa-heart">28</a></li>
+						<li><a href="#" class="icon solid fa-comment">128</a></li>
+					</ul>
+				</footer>
+
+<!--별점-->
+<!-- <head>
+<style>
+.star-input>.input,
+.star-input>.input>label:hover,
+.star-input>.input>input:focus+label,
+.star-input>.input>input:checked+label{display: inline-block;vertical-align:middle;background:url('images/grade_img.png')no-repeat;}
+.star-input{display:inline-block; white-space:nowrap;width:225px;height:40px;padding:25px;line-height:30px;}
+.star-input>.input{display:inline-block;width:150px;background-size:150px;height:28px;white-space:nowrap;overflow:hidden;position: relative;}
+.star-input>.input>input{position:absolute;width:1px;height:1px;opacity:0;}
+.star-input>.input.focus{outline:1px dotted #ddd;}
+.star-input>.input>label{width:30px;height:0;padding:28px 0 0 0;overflow: hidden;float:left;cursor: pointer;position: absolute;top: 0;left: 0;}
+.star-input>.input>label:hover,
+.star-input>.input>input:focus+label,
+.star-input>.input>input:checked+label{background-size: 150px;background-position: 0 bottom;}
+.star-input>.input>label:hover~label{background-image: none;}
+.star-input>.input>label[for="p1"]{width:30px;z-index:5;}
+.star-input>.input>label[for="p2"]{width:60px;z-index:4;}
+.star-input>.input>label[for="p3"]{width:90px;z-index:3;}
+.star-input>.input>label[for="p4"]{width:120px;z-index:2;}
+.star-input>.input>label[for="p5"]{width:150px;z-index:1;}
+.star-input>output{display:inline-block;width:60px; font-size:18px;text-align:right; vertical-align:middle;}
+</style>
+</head>
+<body>
+<span class="star-input">
+	<span class="input">
+    	<input type="radio" name="star-input" value="1" id="p1">
+    	<label for="p1">1</label>
+    	<input type="radio" name="star-input" value="2" id="p2">
+    	<label for="p2">2</label>
+    	<input type="radio" name="star-input" value="3" id="p3">
+    	<label for="p3">3</label>
+    	<input type="radio" name="star-input" value="4" id="p4">
+    	<label for="p4">4</label>
+    	<input type="radio" name="star-input" value="5" id="p5">
+    	<label for="p5">5</label>
+  	</span>
+  	<output for="star-input"><b>0</b>점</output>
+</span> -->
+
+            <div id='review'>
+               <h2 >댓글 중 <b style="color:red">64%</b>가 긍정적인 반응을 보였습니다.</h2>
+            </div>
+						
+<script src="js/jquery-1.11.3.min.js"></script>
+<script src="js/star.js"></script>
+<body>
+
+				<!-- 리스트 출력하기-->
+				<div class="container">
+					<hr>
+					<!-- <h3>댓글리스트</h3> -->
+					<br>
+					<!-- 리스트 붙일 곳 -->
+					<div class="replyList"></div>
+				</div>
+
+
+
+				<!-- 쓰기 텍스트 필드 시작-->
+				<div class="container">
+					<div class="form-group">
+						<!-- <label for="comment">텍스트 or 댓글 기능</label> -->
+						<textarea class="form-control" rows="5" id="comment" placeholder="내용을 입력하세요"></textarea>
+						<br>
+
+						<!-- 쓰기 버튼 가운데 정렬 -->
+						<div class="text-center">
+							<button type="button" class="btn btn-success write" id="write" name="write">쓰기</button>
+						</div>
+					</div>
+				</div>
+				<!-- 쓰기 텍스트 필드 끝-->
+			</article>
+
+		</div>
+
+		<!-- Footer -->
+		<section id="footer">
+			<ul class="icons">
+				<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+				<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+				<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+				<li><a href="#" class="icon solid fa-rss"><span class="label">RSS</span></a></li>
+				<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+			</ul>
+			<p class="copyright">&copy; Untitled. Design: <a href="http://html5up.net">HTML5 UP</a>. Images: <a href="http://unsplash.com">Unsplash</a>.</p>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/browser.min.js"></script>
+	<script src="assets/js/breakpoints.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<script src="assets/js/main.js"></script>
+	<script src="./js/time.js"></script>
+	<script src="./js/sessionCheck.js"></script>
+
+	<script src="https://www.gstatic.com/firebasejs/4.10.1/firebase.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/7.3.0/firebase-analytics.js"></script>
+	<script>
+    var writerAddress = "0x1099140103CDbDC97c54D1A48Bb943B8CB29EC9b";
+    // 구매자 메타마스크 주소
+    var userAddress;
+    
+    
+    
+		var firebaseEmailAuth; //파이어베이스 email 인증 모듈 전역변수
+		var firebaseDatabase; //파이어베이스 db 모듈 전역변수
+		var userInfo; //가입한 유저의 정보. object 타입
+		var name;
+		var loginUserKey;
+		var comment;      
+
+            
+        var contractAddress="0x3cF0157Cf6829C3Aa5a0a62EC9912f6b285E8F95";
+        var abi = [
+        	{
+        		"constant": false,
+        		"inputs": [
+        			{
+        				"name": "_writer",
+        				"type": "address"
+        			},
+        			{
+        				"name": "_buyer",
+        				"type": "address"
+        			},
+        			{
+        				"name": "_text",
+        				"type": "string"
+        			},
+        			{
+        				"name": "_score",
+        				"type": "uint256"
+        			}
+        		],
+        		"name": "setReview",
+        		"outputs": [],
+        		"payable": false,
+        		"type": "function",
+        		"stateMutability": "nonpayable"
+        	},
+        	{
+        		"constant": false,
+        		"inputs": [
+        			{
+        				"name": "x",
+        				"type": "uint256"
+        			}
+        		],
+        		"name": "set",
+        		"outputs": [],
+        		"payable": false,
+        		"type": "function",
+        		"stateMutability": "nonpayable"
+        	},
+        	{
+        		"constant": true,
+        		"inputs": [],
+        		"name": "get",
+        		"outputs": [
+        			{
+        				"name": "",
+        				"type": "uint256"
+        			}
+        		],
+        		"payable": false,
+        		"type": "function",
+        		"stateMutability": "view"
+        	},
+        	{
+        		"constant": true,
+        		"inputs": [
+        			{
+        				"name": "",
+        				"type": "uint256"
+        			}
+        		],
+        		"name": "reports",
+        		"outputs": [
+        			{
+        				"name": "writer",
+        				"type": "address"
+        			},
+        			{
+        				"name": "buyer",
+        				"type": "address"
+        			},
+        			{
+        				"name": "text",
+        				"type": "string"
+        			},
+        			{
+        				"name": "score",
+        				"type": "uint256"
+        			}
+        		],
+        		"payable": false,
+        		"type": "function",
+        		"stateMutability": "view"
+        	}
+        ];
+      
+          var shareportContract;
+          var shareport;
+		//파이어 베이스 초기화 코드
+		var config = {
+			apiKey: "AIzaSyBealjJBHfcbRlptxLcAoxdhpSbFswQOZg",
+			authDomain: "shareport-e85b2.firebaseapp.com",
+			databaseURL: "https://shareport-e85b2.firebaseio.com",
+			projectId: "shareport-e85b2",
+			storageBucket: "shareport-e85b2.appspot.com",
+			messagingSenderId: "978150427508",
+			appId: "1:978150427508:web:115635132ce73e50223a21",
+			measurementId: "G-1SB8TYEZ99"
+		};
+
+		var defaultProject = firebase.initializeApp(config);
+
+		firebase.analytics();
+
+		firebaseEmailAuth = firebase.auth(); //파이어베이스 인증 객체
+		firebaseDatabase = firebase.database();
+
+		var storage = firebase.storage(); //파이어베이스 데이터베이스 객체
+		var database = firebase.database();
+
+		var uploader = document.getElementById('uploader');
+		var downloadButton = document.getElementById('downloadButton');
+		var downloadseg1Button = document.getElementById('downloadseg1Button');
+		var downloadseg2Button = document.getElementById('downloadseg2Button');
+		var downloadseg3Button = document.getElementById('downloadseg3Button');
+
+		// TODO: 여기를 유저이름으로 바꿔주세요
+		var user_name1 = 'soyoung';
+		// TODO: 여기를 다운로드 할 파일 이름으로 바꿔주세요
+		var file_name1 = 'What is telomere.docx';
+		var arr = file_name1.split(".");
+		// 파일이름을 확장자명없이 저장
+		var onlyName = arr[0];
+		var nameRef = database.ref('report/'+onlyName+'/segement/');
+		document.getElementById("main").textContent=onlyName;
+		document.getElementById("seg1").textContent=nameRef.val()+"seg1";
+		document.getElementById("seg2").textContent=nameRef.val()+"seg2";
+		document.getElementById("seg3").textContent=nameRef.val()+"seg3";
+		
+		document.getElementById("reportTitle").textContent = onlyName;
+		document.getElementById("reportWriter").textContent = user_name1;
+		var buyer = 'soyoung';
+		var downloadKey = database.ref('report/'+onlyName+'/segement/key').once('value').then(function(datas) {
+			console.log(datas.val());
+		 //데이터 가져오기
+
+
+
+
+		downloadButton.addEventListener('click', function() {
+
+			var fileRef = storage.ref(datas.val() + file_name1 +"/" + "main/" + file_name1);
+
+			fileRef.getDownloadURL().then(function(url) {
+
+
+				console.log("download");
+				console.log(url);
+				window.location = url;
+			})
+		});
+
+		downloadseg1Button.addEventListener('click', function() {
+			var fileRef = storage.ref(datas.val() + file_name1+ "/" + "seg1");
+
+			fileRef.getDownloadURL().then(function(url) {
+				database.ref('report/' + onlyName + "/buyer/" + buyer).set({
+					part: 'seg1'
+				});
+				console.log("download");
+				console.log(url);
+				window.location = url;
+			})
+		});
+		downloadseg2Button.addEventListener('click', function() {
+			var fileRef = storage.ref(datas.val() + file_name1 + "/" + "seg2");
+			database.ref('report/' + onlyName + "/buyer/" + buyer).set({
+				part: 'seg2'
+			});
+			fileRef.getDownloadURL().then(function(url) {
+
+				console.log("download");
+				console.log(url);
+				window.location = url;
+			})
+		});
+		downloadseg3Button.addEventListener('click', function() {
+			var fileRef = storage.ref(datas.val() + file_name1 + "/" + "seg3");
+			database.ref('report/' + onlyName + "/buyer/" + buyer).set({
+				part: 'seg3'
+			});
+			fileRef.getDownloadURL().then(function(url) {
+
+				console.log("download link");
+				console.log(url);
+				window.location = url;
+			})
+		});
+});
+userSessionCheck();
+		$(document).ready(function() {
+
+			//메인화면 감사일기 쓰기버튼 눌렀을 때
+			$(document).on('click', '.write', function() {
+
+				//네비게이션 메뉴의 text값 가져오기 - 자바스크립트 dom 방식으로 가져왔다.
+				var seseionCheck = document.getElementById("loginmenu").textContent;
+				startApp(userAddress, comment);
+
+				//내가 쓴글 가져오기 - jquery방식으로 가져왔다.
+				comment = $('#comment').val();
+				if (seseionCheck == "Log Out") {
+					//저장하기
+					saveReplys();
+				} else {
+					alert("로그인이 필요한 서비스 입니다.")
+				}
+			});
+		});
+
+
+		// TODO: 실제 레포트 이름으로 바
+		var report_name = 'Test';
+		//쓰기 버튼 눌렀을 때 호출 되는 함수
+		function saveReplys() {
+
+			//thanks 라는 테이블을 만들고 하위 데이터에 유저 아이디를 넣어준다. 그곳에 push로 가상의 키를 넣고, 객체를 넣어준다.!!!!
+			//var replyRef = firebaseDatabase.ref("comments");
+
+			var replyRef = firebaseDatabase.ref('report/' + onlyName + "/buyer");
+			var reply = replyRef.push();
+			// 해당 객체의 key 값이 자동으로 생성된다.
+			var reply = replyRef.push(); // 해당 객체의 key 값이 자동으로 생성된다.
+
+			//로그인한 유저의 pk값,이름,내용,시간 데이터
+			var obj = {
+				Userkey: loginUserKey,
+				name: name,
+				text: comment
+			};
+
+			//위에서 thankRef.push()로 만들어진 key아래 위치에 저장해준다.
+			reply.set(obj);
+
+			alert("등록완료");
+
+			$('#comment').val("");
+		}
+
+
+
+		function replyList() {
+			// alert("CommentList")
+			//로그인한 유저라면
+			if (loginUserKey) {
+				// alert(loginUserKey)
+				//글이 저장된 레퍼런스 값 가져오기
+				var replyRef = firebaseDatabase.ref('report/' + onlyName + '/buyer')
+				//var replyRef = firebaseDatabase.ref("report/"+file_name+"/buyer");
+				// 				replyRef.once('value', function(snapshot) {
+				//  			  snapshot.forEach(function(childSnapshot) {
+				//       // 사용자
+				//       var childKey = childSnapshot.key;
+				//       // 사용자 데이터
+				//       var childData = childSnapshot.val();
+				//       // 해당 segment이면
+				//       if (childData.part == seg) {
+				//          // TODO: 이부분을 출력으로 바꿔주면 됨
+				//          console.log('buyer', childKey);
+				//          var score = childData.score;
+				//          var text = childData.text;
+				//          // TODO: 이 부분을 출력으로 바꿔주면 됨
+				//          console.log('score', score);
+				//          console.log('text', text);
+				//       }
+				//    });
+				// });
+				//on 함수로 글 목록가져오기
+				replyRef.on('child_added', on_reply_list)
+			} else {
+				alert("실패")
+				return;
+			}
+		}
+
+		//땡스리스트 thanks 테이블의 thanks 키 들을 연속적으로 가져온다.
+		function on_reply_list(data) {
+
+			console.log("on_reply_list() 함수안으로 들어왔습니다 리스트를 가져오겠습니다")
+			var key = data.key;
+
+			var Data = data.val();
+			var comment = Data.text;
+			var name = Data.name;
+			var userkey = Data.userkey;
+
+			//alert(comment +"/"+ createtime + "/"+name +"/"+userkey);
+
+
+			//감사리스트 동적으로 붙이기
+			var html =
+				"<div class=\"media\" id='" + userkey + "' onclick=\"show_user_page(this.id)\">" +
+				"<div class=\"media-body\">" +
+				"<h4 class=\"media-heading\">" + name +
+
+				"<p>" + comment + "</p></div></div>" +
+				"<hr>";
+
+			$(".replyList").append(html);
+		}
+	      window.addEventListener('load', function () {
+	            // Checking if Web3 has been injected by the browser (Mist/MetaMask)
+	            if (typeof web3 !== 'undefined') {
+	                // Use Mist/MetaMask's provider
+	                window.web3 = new Web3(web3.currentProvider);
+	            } else {
+	                console.log('No web3? You should consider trying MetaMask!')
+	                // fallback - use your fallback strategy (local node / hosted node + in-dapp id mgmt / fail)
+	                window.web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:7545"));
+	            }
+	            // Modern DApp Browsers
+	            if (window.ethereum) {
+	                web3 = new Web3(window.ethereum);
+	                try {
+	                    window.ethereum.enable().then(function () {
+	                        // User hasW allowed account access to DApp...
+	                    });
+	                } catch (e) {
+	                    // User has denied account access to DApp...
+	                }
+	            }
+	            // Legacy DApp Browsers
+	            else if (window.web3) {
+	                web3 = new Web3(web3.currentProvider);
+	            }
+	            // Non-DApp Browsers
+	            else {
+	                alert('You have to install MetaMask !');
+	            }
+	        });
+	      
+	      function startApp(userAddress, omment) {
+
+	            
+	            shareportContract = web3.eth.contract(abi);
+	            shareport = shareportContract.at(userAddress);
+	            
+	            web3.eth.getAccounts(function (e, r) {
+	                //alert(getLink(r[0]));
+	                userAddress = r[0];
+	                var send;
+	                if (score < 2) {
+	                   send = web3.toWei(10, "ether");
+	                }
+	                else if (score < 4) {
+	                   send = web3.toWei(20, "ether");
+	                } 
+	                else {
+	                   send = web3.toWei(30, "ether");
+	                }
+	                init(userAddress, comment, send);
+	            });
+	        }
+	        function getLink(addr) {
+	            return '<a target="_blank" href=https://ropsten.etherscan.io/address/' + addr + '>' + addr + '</a>';
+	        }
+	        
+	        var score = 4;
+	        
+	        function init(userAddress, comment, send) {
+	           console.log("contrAdd", contractAddress);
+	           console.log('initAdd', userAddress);
+	           console.log("comment", comment);
+	           console.log("score", score);
+	           console.log("send", send);
+	           
+	            shareport.setReview(contractAddress, userAddress, comment, score, function(e,r){
+	               if(!e) {
+	                  web3.eth.sendTransaction({from:userAddress, to:contractAddress, value: send}, 
+	                          function(e, r){
+	                      if(!e){console.log(r);}
+	                      else console.log(e);
+	                     });
+	                  console.log(r);
+	               }
+	               else console.log(e);
+	            });
+	      }
+	</script>
+
+</body>
+
+</html>
