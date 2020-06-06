@@ -3,7 +3,7 @@ Gachon Univ. graduation project
 This code is designed to create a block chain based web page called 'shareport'.
 
 ### Dataset
-Dataset used to develop the comment analysis program is available for download on our git
+Dataset used to develop the comment analysis program is private.
 
 
 ### To run this program
@@ -20,4 +20,5 @@ Then, url will be produced.
 ### Content
 * html files
 * shareport.sol
+* shareport_analysis.py
 * ppt file describing our program
