@@ -125,19 +125,19 @@
 				<br>
 				<ul>
 				<li>
-				<a>전 체</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				<a id="main">전 체</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
  				<button type="button" id="downloadButton">download</button><br><br><br>
 			</li>
 			<li>
-				<a>레포트1</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				<a id="seg1">레포트1</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 				<button type="button" id="downloadseg1Button">download</button><br><br><br>
 			</li>
 			<li>
-				<a>레포트2</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				<a id="seg2">레포트2</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 				<button type="button" id="downloadseg2Button">download</button><br><br><br>
 			</li>
 			<li>
-				<a>레포트3</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				<a id="seg3">레포트3</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 				<button type="button" id="downloadseg3Button">download</button><br><br><br>
 			</li>
 			</ul>
@@ -258,106 +258,108 @@
 	<script src="https://www.gstatic.com/firebasejs/4.10.1/firebase.js"></script>
 	<script src="https://www.gstatic.com/firebasejs/7.3.0/firebase-analytics.js"></script>
 	<script>
+    var writerAddress = "0x1099140103CDbDC97c54D1A48Bb943B8CB29EC9b";
+    // 구매자 메타마스크 주소
+    var userAddress;
+    
+    
+    
 		var firebaseEmailAuth; //파이어베이스 email 인증 모듈 전역변수
 		var firebaseDatabase; //파이어베이스 db 모듈 전역변수
 		var userInfo; //가입한 유저의 정보. object 타입
 		var name;
 		var loginUserKey;
-		var comment;
-	     // 작성자 메타마스크 주소
-        var contractAddress="0xC6597472568940A6f861763a6856D072b2286Ea4";
-      var writerAddress = "0x1099140103CDbDC97c54D1A48Bb943B8CB29EC9b";
-        // 구매자 메타마스크 주소
-        var userAddress;
-        
-      //파이어 베이스 초기화 코드
+		var comment;      
+
+            
+        var contractAddress="0xfBA419451EE7A2E09205FE25423a5cCAA742cd67";
         var abi = [
-            {
-               "constant": false,
-               "inputs": [
-                  {
-                     "name": "x",
-                     "type": "uint256"
-                  }
-               ],
-               "name": "set",
-               "outputs": [],
-               "payable": false,
-               "type": "function",
-               "stateMutability": "nonpayable"
-            },
-            {
-               "constant": false,
-               "inputs": [
-                  {
-                     "name": "_writer",
-                     "type": "address"
-                  },
-                  {
-                     "name": "_buyer",
-                     "type": "address"
-                  },
-                  {
-                     "name": "_text",
-                     "type": "string"
-                  },
-                  {
-                     "name": "_score",
-                     "type": "uint256"
-                  }
-               ],
-               "name": "setReview",
-               "outputs": [],
-               "payable": false,
-               "type": "function",
-               "stateMutability": "nonpayable"
-            },
-            {
-               "constant": true,
-               "inputs": [],
-               "name": "get",
-               "outputs": [
-                  {
-                     "name": "",
-                     "type": "uint256"
-                  }
-               ],
-               "payable": false,
-               "type": "function",
-               "stateMutability": "view"
-            },
-            {
-               "constant": true,
-               "inputs": [
-                  {
-                     "name": "",
-                     "type": "uint256"
-                  }
-               ],
-               "name": "reports",
-               "outputs": [
-                  {
-                     "name": "writer",
-                     "type": "address"
-                  },
-                  {
-                     "name": "buyer",
-                     "type": "address"
-                  },
-                  {
-                     "name": "text",
-                     "type": "string"
-                  },
-                  {
-                     "name": "score",
-                     "type": "uint256"
-                  }
-               ],
-               "payable": false,
-               "type": "function",
-               "stateMutability": "view"
-            }
-         ];
+        	{
+        		"constant": false,
+        		"inputs": [
+        			{
+        				"name": "_writer",
+        				"type": "address"
+        			},
+        			{
+        				"name": "_buyer",
+        				"type": "address"
+        			},
+        			{
+        				"name": "_text",
+        				"type": "string"
+        			},
+        			{
+        				"name": "_score",
+        				"type": "uint256"
+        			}
+        		],
+        		"name": "setReview",
+        		"outputs": [],
+        		"payable": false,
+        		"type": "function",
+        		"stateMutability": "nonpayable"
+        	},
+        	{
+        		"constant": false,
+        		"inputs": [
+        			{
+        				"name": "x",
+        				"type": "uint256"
+        			}
+        		],
+        		"name": "set",
+        		"outputs": [],
+        		"payable": false,
+        		"type": "function",
+        		"stateMutability": "nonpayable"
+        	},
+        	{
+        		"constant": true,
+        		"inputs": [],
+        		"name": "get",
+        		"outputs": [
+        			{
+        				"name": "",
+        				"type": "uint256"
+        			}
+        		],
+        		"payable": false,
+        		"type": "function",
+        		"stateMutability": "view"
+        	},
+        	{
+        		"constant": true,
+        		"inputs": [
+        			{
+        				"name": "",
+        				"type": "uint256"
+        			}
+        		],
+        		"name": "reports",
+        		"outputs": [
+        			{
+        				"name": "writer",
+        				"type": "address"
+        			},
+        			{
+        				"name": "buyer",
+        				"type": "address"
+        			},
+        			{
+        				"name": "text",
+        				"type": "string"
+        			},
+        			{
+        				"name": "score",
+        				"type": "uint256"
+        			}
+        		],
+        		"payable": false,
+        		"type": "function",
+        		"stateMutability": "view"
+        	}
+        ];
       
           var shareportContract;
           var shareport;
@@ -392,10 +394,16 @@
 		// TODO: 여기를 유저이름으로 바꿔주세요
 		var user_name1 = 'soyoung';
 		// TODO: 여기를 다운로드 할 파일 이름으로 바꿔주세요
-		var file_name1 = 'Test1.png';
+		var file_name1 = 'What is telomere.docx';
 		var arr = file_name1.split(".");
 		// 파일이름을 확장자명없이 저장
 		var onlyName = arr[0];
+		var nameRef = database.ref('report/'+onlyName+'/segement/');
+		document.getElementById("main").textContent=onlyName;
+		document.getElementById("seg1").textContent=nameRef.val()+"seg1";
+		document.getElementById("seg2").textContent=nameRef.val()+"seg2";
+		document.getElementById("seg3").textContent=nameRef.val()+"seg3";
+		
 		document.getElementById("reportTitle").textContent = onlyName;
 		document.getElementById("reportWriter").textContent = user_name1;
 		var buyer = 'soyoung';
@@ -598,12 +606,7 @@ userSessionCheck();
 	            }
 	        });
 	      
-	      function startApp(userAddress, omment) {
-
-	            
-	            shareportContract = web3.eth.contract(abi);
-	            shareport = shareportContract.at(userAddress);
-	            
+	      function startApp(userAddress, omment) {	            
 	            web3.eth.getAccounts(function (e, r) {
 	                //alert(getLink(r[0]));
 	                userAddress = r[0];
@@ -619,6 +622,9 @@ userSessionCheck();
 	                }
 	                init(userAddress, comment, send);
 	            });
+	            
+	            shareportContract = web3.eth.contract(abi);
+	            shareport = shareportContract.at(userAddress);
 	        }
 	        function getLink(addr) {
 	            return '<a target="_blank" href=https://ropsten.etherscan.io/address/' + addr + '>' + addr + '</a>';
