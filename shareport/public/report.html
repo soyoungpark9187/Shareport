@@ -272,7 +272,7 @@
 		var comment;      
 
             
-        var contractAddress="0x3cF0157Cf6829C3Aa5a0a62EC9912f6b285E8F95";
+        var contractAddress="0xfBA419451EE7A2E09205FE25423a5cCAA742cd67";
         var abi = [
         	{
         		"constant": false,
@@ -606,12 +606,7 @@ userSessionCheck();
 	            }
 	        });
 	      
-	      function startApp(userAddress, omment) {
-
-	            
-	            shareportContract = web3.eth.contract(abi);
-	            shareport = shareportContract.at(userAddress);
-	            
+	      function startApp(userAddress, omment) {	            
 	            web3.eth.getAccounts(function (e, r) {
 	                //alert(getLink(r[0]));
 	                userAddress = r[0];
@@ -627,6 +622,9 @@ userSessionCheck();
 	                }
 	                init(userAddress, comment, send);
 	            });
+	            
+	            shareportContract = web3.eth.contract(abi);
+	            shareport = shareportContract.at(userAddress);
 	        }
 	        function getLink(addr) {
 	            return '<a target="_blank" href=https://ropsten.etherscan.io/address/' + addr + '>' + addr + '</a>';
